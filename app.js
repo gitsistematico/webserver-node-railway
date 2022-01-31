@@ -9,26 +9,26 @@ const port = process.env.PORT;
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
 
-app.get('/', (req, res) => {
-    res.render('home',{
-        nombre: 'Ricardo Rincon',
-        titulo: 'Curso de Node'
-    });
-})
+// app.get('/', (req, res) => {
+//     res.render('home',{
+//         nombre: 'Ricardo Rincon',
+//         titulo: 'Curso de Node'
+//     });
+// })
 
-app.get('/generic', (req, res) => {
-    res.render('generic',{
-        nombre: 'Ricardo Rincon',
-        titulo: 'Curso de Node'
-    });
-})
+// app.get('/generic', (req, res) => {
+//     res.render('generic',{
+//         nombre: 'Ricardo Rincon',
+//         titulo: 'Curso de Node'
+//     });
+// })
 
-app.get('/elements', (req, res) => {
-    res.render('elements',{
-        nombre: 'Ricardo Rincon',
-        titulo: 'Curso de Node'
-    });
-})
+// app.get('/elements', (req, res) => {
+//     res.render('elements',{
+//         nombre: 'Ricardo Rincon',
+//         titulo: 'Curso de Node'
+//     });
+// })
 // servir contenido estativo
 app.use( express.static('public'));
 
@@ -49,7 +49,7 @@ app.use( express.static('public'));
 // })
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/public/404.html');
+    res.sendFile(__dirname + '/public/index.html');
 })
 app.listen(port, () => {
     console.log(`Listening at port: ${ port }`);
